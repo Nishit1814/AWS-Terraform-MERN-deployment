@@ -1,0 +1,24 @@
+---
+- name: Install Git on target hosts
+  hosts: servers
+  become: true  # Runs commands with sudo/root privileges
+
+  tasks:
+    - name: Install Git on Debian/Ubuntu systems
+      ansible.builtin.apt:
+        name: git
+        state: present
+        update_cache: true
+      when: ansible_os_family == "Debian"
+
+    - name: Install Git on RedHat/CentOS/Fedora systems
+      ansible.builtin.dnf:
+        name: git
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Verify Git installation
+      ansible.builtin.command: git --version
+      register: git_version
+      changed_when: false
+

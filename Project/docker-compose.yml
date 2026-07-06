@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  # 1. Backend Service
+  backend:
+    build: ./Node
+    container_name: mern_backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./Node/.env
+
+  # 2. Frontend Service
+  frontend:
+    build: ./React
+    container_name: mern_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend

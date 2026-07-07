@@ -1,4 +1,7 @@
 Automated AWS Infrastructure & MERN Stack Deployment
+<img width="1024" height="559" alt="daigram (Terraform Project)" src="https://github.com/user-attachments/assets/776c9707-9521-4bdf-ade6-016f65dc1485" />
+
+
 This project demonstrates a complete, end-to-end DevOps pipeline for provisioning secure cloud infrastructure and deploying a containerized full-stack application. It integrates Infrastructure as Code (IaC), configuration management, containerization, and reverse proxying into a seamless workflow.
 
 Overview
